@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js deneme</title>
+</head>
+<body>
+    <p id="result"></p>
+    <input type="text"  id="number" placeholder="Lutfen sayi giriniz">
+    <button type="button" onclick="printscreen()">Check</button>
+    
+    <script>
+        function printscreen() {
+            var x=document.getElementById('number').value;
+            if (isNaN(x)) {
+                document.getElementById('result').innerHTML="Lutfen sadece sayi giriniz";
+            } else {
+                document.getElementById('result').innerHTML="Tebrikler girdiyiniz sayi dogru: " + x;
+            }
+        }
+    </script>
+</body>
+</html>
