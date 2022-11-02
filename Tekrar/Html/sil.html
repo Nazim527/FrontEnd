@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Ders uygulama/CSS/Lesson random psw.css">
+    <title>Tekrar</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <p><input type="text" id="midterm"></p>
+    <p><input type="text" id="final"></p>
+    <button type="button" onclick="noteResult()">Sonuc</button>
+
+    <script type="text/javascript">
+        function noteResult() {
+            var midTermNote = Number(document.getElementById('midterm').value);
+            var finalNote = Number(document.getElementById('final').value);
+            var message = "";
+            var average = midTermNote*0.3 + finalNote*0.8;
+
+            if (isNaN(midTermNote)) {
+                message = "vize notunu  sayisal bir deger olarak girmelisiniz";
+            } else if (isNaN(finalNote)) {
+                message = "Final notunu sayisal bir deger olaraq girmelisiniz";
+            }
+            else {
+                message =(average>=60) ? "siz imtahandan kecdiniz" : "siz imtahandan qaldiniz";
+            }
+            document.getElementById('result').innerHTML = message
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #03a8f4;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    transition: 0.8s;
+}
+
+body.active {
+    background-color: #f43648;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+.bluebg {
+    position: absolute;
+    top: 40px;
+    height: 420px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+}
+
+.bluebg .box {
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bluebg .box h2 {
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.bluebg .box button {
+    padding: 10px 20px;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    border: none;
+}
+
+.formBx {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #fff;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+    transition-property: all;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.formBx.active {
+    left: 50%;
+}
+
+.formBx .form {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formBx .form form {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formBx .form form h3 {
+    position: relative;
+    top: -10px;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.formBx .signinForm form input:not(:nth-child(4)) {
+    position: relative;
+    width: 100%;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.formBx .signinForm form input[type="submit"] {
+    background-color: #03a9f4;
+    max-width: 150px;
+    padding: 10px 30px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.formBx .form form .forgot {
+    color: #333;
+}
+
+.formBx.active .signinForm {
+    left: -100%;
+    transition-delay: 0s;
+}
+
+.formBx .signinForm {
+    transition-delay: 0.25s;
+}
+
+.formBx .signupForm {
+    left: 100%;
+    transition-delay: 0;
+}
+
+.formBx .signupForm form input {
+    position: relative;
+    width: 100%;
+    outline: none;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.formBx.active .signupForm {
+    left: 0;
+    transition-delay: 0.25s;
+}
+
+.formBx .signupForm form input[type="submit"] {
+    background-color: #f43648;
+    max-width: 150px;
+    padding: 10px 30px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+    .container {
+        max-width: 400px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .bluebg {
+        top: 0;
+        height: 100%;
+    }
+    .formBx {
+        width: 100%;
+        height: 500px;
+        top: 0;
+    }
+    .bluebg .box {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+    }
+    .box.signin {
+        top: 0;
+    }
+    .formBx.active {
+        left: 0;
+        top: 150px;
+    }
+}
