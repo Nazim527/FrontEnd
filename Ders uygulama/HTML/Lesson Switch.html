@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch case</title>
+</head>
+<body>
+  <p id="result"></p>
+  <input type="text" id="take">
+  <button type="button" onclick="Show()">Goster</button>
+
+
+  <script>
+    function Show() {
+      var takeAway = document.getElementById('take').value;
+      var message = "";
+
+      switch(takeAway) {
+        case "JS":  message="Siz javaScript yazdiniz"; break;
+        case "Java": message="Siz Java yazdiniz"; break;
+        default: message="Duzgun bir yazi girmediniz";
+      }
+
+      document.getElementById('result').innerHTML=message;
+    }
+  </script>
+
+</body>
+</html>
