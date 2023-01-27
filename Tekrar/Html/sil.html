@@ -4,98 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="./sil.css">
   <title>Document</title>
 </head>
 <body>
-  <div class="navigation">
-    <ul>
-      <li class="list active"> 
-        <b></b>
-        <b></b>
-        <a href="#">
-          <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-          <span class="tittle">Home</span>
-        </a>
-      </li>   
-      <li class="list">
-        <b></b>
-        <b></b> 
-        <a href="#">
-          <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-          <span class="tittle">Profiles</span>
-        </a>
-      </li>   
-      <li class="list"> 
-        <b></b>
-        <b></b>
-        <a href="#">
-          <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
-          <span class="tittle">Messages</span>
-        </a>
-      </li>   
-      <li class="list"> 
-        <b></b>
-        <b></b>
-        <a href="#">
-          <span class="icon"><ion-icon name="cog-outline"></ion-icon></span>
-          <span class="tittle">Settings</span>
-        </a>
-      </li>   
-      <li class="list"> 
-        <b></b>
-        <b></b>
-        <a href="#">
-          <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
-          <span class="tittle">Help</span>
-        </a>
-      </li>   
-      <li class="list"> 
-        <b></b>
-        <b></b>
-        <a href="#">
-          <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-          <span class="tittle">Password</span>
-        </a>
-      </li>   
-      <li class="list">
-        <b></b>
-        <b></b> 
-        <a href="#">
-          <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-          <span class="tittle">Sign in Out</span>
-        </a>
-      </li>   
-    </ul>
-
-    <div class="toggle">
-      <ion-icon name="menu-outline" class="open"></ion-icon>
-      <ion-icon name="close-outline" class="close"></ion-icon>
-    </div>
-  </div>
-
+  
+  <script src="./sil.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <script>
-    let Menutoggle = document.querySelector('.toggle');
-    let navigation = document.querySelector('.navigation');
-    Menutoggle.onclick = function() {
-      Menutoggle.classList.toggle('active');
-      navigation.classList.toggle('active');
-    }
-
-    let list = document.querySelectorAll('.list');
-    for(let i=0; i<list.length; i++) {
-      list[i].onclick = function() {
-        let j = 0;
-        while (j<list.length) {
-          list[j++].className = 'list';
-        }
-        list[i].className = 'list active';
-      }
-    }
-
-  </script>
 </body>
 </html>

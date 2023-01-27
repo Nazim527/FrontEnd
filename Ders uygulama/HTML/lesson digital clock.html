@@ -36,7 +36,7 @@
             document.getElementById('MyClockDisplay').innerHTML = time;
             document.getElementById('MyClockDisplay').textContent = time;
 
-            setTimeout(showTime, 1000);
+            setInterval(showTime, 1000);
         }
 
         showTime();

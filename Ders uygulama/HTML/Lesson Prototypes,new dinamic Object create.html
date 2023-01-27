@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson create dinamic Objects</title>
+</head>
+<body>
+  <p id="result"></p>
+
+  <script>
+    var x,message;
+  function person(first,last,age,color) {
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+      this.eyeColor = color;
+      
+    }
+
+    // Create Dynamic Objects
+    /*var myPerson = new person("Nazim","Rzayev",22,"Blue");
+    var myPerson2 = new person("ilahe","Rzazade",22,"Black");
+    myPerson.changeName("Nermin")
+    document.getElementById('result').innerHTML = myPerson.firstName + " and " + myPerson2.firstName;*/
+
+    // Objects Prototypes Properties Sample
+    var myPerson = new person("Nazim","Rzayev",22,"Blue");
+    person.prototype.hair = "Brown"
+    // document.getElementById('result').innerHTML = myPerson.hair
+
+    // Objects Prototypes Method Sample
+    person.prototype.changeName = function (name) {
+      return this.firstName = name;
+    }
+    myPerson.changeName("Sima");
+    document.getElementById('result').innerHTML = myPerson.firstName
+  </script>  
+</body>
+</html>

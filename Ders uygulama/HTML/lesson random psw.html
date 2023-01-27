@@ -14,7 +14,7 @@
             <div class="onclick">
                 
                 <button type="button" id="button" class="btn1" onclick="genPassword()">Generater </button>
-                <a id="button" class="btn2" onclick="copyPassword()">Copy</a>
+                <button id="button" class="btn2" onclick="copyPassword()">Copy</button>
             </div>
         </div>
 
@@ -34,9 +34,9 @@
     }
 
     function copyPassword() {
-        var copyText = document.getElementById("password");
+        var copyText = document.getElementById('password');
         copyText.select();
-        copyText.setSelectRange(2, 999);
+        copyText.setSelectRange(1, 999);
         document.execCommand("copy");
         
     }

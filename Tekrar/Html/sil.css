@@ -1,165 +1,708 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* --------------- ROOT VARIABLES --------------- */
+
+:root {
+  --color-primary: #7380ed;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+   --color-white: #fff;  
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+   --color-light: rgba(132, 139, 200, 0.18);
+   -color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* ---------------- DARK THEME VARIABLES ---------------- */
+/* ---------------- EN SONDA ---------------- */
+.dark-theme-variables {
+  --color-background: #181a1e; 
+  --color-white: #202528; 
+  --color-dark: #f1f1f8fb; 
+  --color-dark-variant: #a3bdcc; 
+  --color-light: rgba(0,0,0, 0.4); 
+  box-shadow: 0 2rem 3rem var(--color-light);
+}
+
 * {
   margin: 0;
-  box-sizing: border-box;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  appearance: none;
+  outline: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 14px;
 }
 
 body {
-  min-height: 100vh;
-  background-color: #fff;
-}
-
-.navigation {
-  position: fixed;
-  background-color: #4d5bf9;
-  width: 70px; /*70px*/
-  top: 20px;
-  left: 20px;
-  bottom: 20px;
-  border-radius: 10px;
-  border-left: 5px solid #4d5bf9;
-  box-sizing: initial;
+  width: 100vw;
+  height: 100vh;
+  font-family: Poppins, sans-serif;
+  background-color: var(--color-background);
+  user-select: none;
   overflow-x: hidden;
-  transition: width 0.5s ease-in-out;
 }
 
-.navigation ul {
+.container {
+  display: grid;
+  width: 96%;
+  grid-template-columns: 14rem auto 23rem;
+  gap: 1.8rem;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--color-dark);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 0.87rem;
+}
+h4 {
+  font-size: 0.8rem;
+}
+h5 {
+  font-size: 0.77em;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+.profile-photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+h1,h2,h3 {
+  color: var(--color-dark);
+}
+
+p {
+  color: var(--color-dark-variant);
+}
+
+b {
+  color: var(--color-dark);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+.danger {
+  color: var(--color-danger);
+}
+.sucess {
+  color: var(--color-success);
+}
+.warning {
+  color: var(--color-warning);
+}
+
+/* Aside */
+aside {
+  height: 100vh;
+}
+
+aside .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.4rem;
+}
+
+aside .logo {
+  display: flex;
+}
+
+aside .logo img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+aside .close {
+  display: none;
+}
+
+/* Aside Sidebar */
+aside .sidebar {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  position: relative;
+  top: 1.5rem;
+}
+
+aside h3 {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+aside .sidebar a ion-icon,
+aside .sidebar span {
+  font-size: 1.4rem;
+  transition: all 300ms ease;
+}
+
+aside .sidebar a {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  height: 3rem;
+  color: var(--color-info-dark);
+  transition: all 300ms ease;
+}
+
+aside .sidebar a:last-child {
+  position: absolute;
+  bottom: 1.2rem;
+  width: 100%;
+}
+
+aside .sidebar a.active {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  margin-left: 0;
+}
+
+aside .sidebar a.active::before {
+  content: '';
+  width: 6px;
+  height: 100%;
+  background-color: var(--color-primary);
+}
+
+aside .sidebar a.active ion-icon {
+  margin-left: calc(1rem - 2px);
+  color: var(--color-primary);
+}
+
+aside .sidebar a:hover ion-icon {
+  margin-left: 0.8rem;
+}
+
+aside .sidebar a .message-count {
+  background-color: var(--color-danger);
+  font-size: 12px;
+  color: var(--color-white);
+  padding: 2px 10px;
+  border-radius: var(--border-radius-1);
+}
+/* End Side Bar */
+
+/* Main */
+main {
+  margin-top: 1.35rem;
+}
+
+main .date {
+  display: inline-block;
+  background-color: var(--color-light);
+  padding: 7px 20px;
+  border-radius: var(--border-radius-1);
+  margin-top: 1rem;
+}
+
+main .date input[type="date"] {
+  background-color: transparent;
+  color: var(--color-dark);
+}
+
+/* Insight */
+main .insights {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.2rem;
+}
+
+main .insights > div {
+  background-color: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  width: 17.5rem;
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+main .insights > div:hover {
+  box-shadow: none;
+}
+
+main .insights > div ion-icon {
+  background-color: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: var(--color-white);
+}
+
+main .insights > div.expense ion-icon {
+  background-color: var(--color-danger);
+}
+main .insights > div.income ion-icon {
+  background-color: var(--color-success);
+}
+
+main .insights div .middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .insights  h3 {
+  margin: 1rem 0 0.6rem;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+main .insights .progress {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+main .insights .progress svg {
+  width: 7rem;
+  height: 7rem;
+}
+
+main .insights .progress svg circle {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 12;
+  stroke-linecap: round;
+  transform: translate(10px, 6px);
+  stroke-dasharray: 110;
+  stroke-dashoffset: 92;
+}
+main .insights .sales svg circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: -50;
+}
+main .insights .expense svg circle {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 100;
+}
+main .insights .income svg circle {
+  stroke-dashoffset: -35;
+  stroke-dasharray: 110;
+}
+
+main .insights .progress .number {
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
   width: 100%;
-  padding-top: 40px;
-  padding-left: 5px;
-}
-
-.navigation ul li {
-  position: relative;
-  list-style: none;
-  width: 100%;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.navigation ul li a {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  color: #fff;
-  text-decoration: none;
-  width: 100%;
-  height: 60px;
-}
-
-.navigation ul li a .icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  min-width: 40px;
-  height: 60px;
-  text-align: center;
-}
-
-.navigation ul li a .icon ion-icon {
-  font-size: 1.5rem;
-}
-
-.navigation ul li a .tittle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 60px;
-  line-height: 50px;
-  padding-left: 10px;
-  white-space: normal;
-}
-
-.navigation ul li.active {
-  background-color: #fff;
-} 
-.navigation ul li.active a {
-  color: #333;
-}
-
-.toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #4d5bf9;
-  height: 50px;
-  width: 50px;
-  border-radius: 10px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.25s;
 }
-.toggle.active {
-  background: #ff4d89;
+
+main .insights span {
+  margin-top: 1.1rem;
+  display: inline-block;
+  font-size: 0.8rem;
 }
-.toggle ion-icon {
-  color: #fff;
-  font-size: 34px !important;
+/* End of Insight */
+
+/* Recents Orders */
+main .recent-order {
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
 }
-.toggle.active ion-icon.close {
+
+main .recent-order h2 {
+  margin-bottom: 0.6rem;
+}
+
+main .recent-order table {
+  background-color: var(--color-white);
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  font-size: 13px  !important;
+  box-shadow: var(--box-shadow);
+}
+main .recent-order table:hover {
+  box-shadow: none;
+}
+
+main table tbody td{
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td {
+  border-bottom: none;
+}
+/* End of Main */
+
+/* Right About */
+.right {
+  margin-top: 1.2rem;
+  width: 20rem;
+}
+
+.right .top {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.right .top button {
+  display: none;
+}
+
+.right .top .theme-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-light);
+  height: 1.6rem;
+  color: var(--color-white);
+  width: 3.5rem;
+  cursor: pointer;
+  border-radius: var(--border-radius-1);
+}
+
+.right .top .theme-toggle ion-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+}
+
+.right .top .theme-toggle ion-icon.active {
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-1);
+  color: white;
+}
+
+.right .top .profile {
+  display: flex;
+  gap: 1rem;
+  text-align: right;
+}
+
+.right .top .info {
+  font-size: 12px;
+}
+
+/* Recent Updates */
+.right .recent-updates {
+  margin-top: 1rem;
+}
+
+.right .recent-updates h2 {
+  margin-bottom: 0.8rem;
+}
+
+.right .recent-updates .updates {
+  background-color: var(--color-white);
+  padding: 18px 16px;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow);
+}
+.right .recent-updates .updates:hover {
+  box-shadow: none;
+}
+
+.right .recent-updates .updates .update {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.right .recent-updates .updates .update div:nth-child(1) {
+  min-width: 50px;
+  min-height: 50px;
   display: block;
 }
-.toggle ion-icon.close {
-  display: none;
+
+.right .recent-updates .updates .update:nth-child(2) {
+  margin: 1rem 0 1rem 0;
 }
-.toggle.active ion-icon.open {
-  display: none;
+.right .recent-updates .updates .update .messages {
+  position: relative;
+  top: 0.2rem;
+  font-size: 13px;
 }
 
-.navigation.active {
-  width: 300px;
+/* Sales Analyitics */ 
+.right .sales-analytics {
+  margin-top: 1.1rem;
 }
 
-.navigation ul li b:nth-child(1) {
-  position: absolute;
-  background-color: #fff;
-  top: -20px;
-  height: 20px;
-  width: 100%;
-  transition: 0.25s;
-  display: none;
+.right .sales-analytics h2 {
+  margin-bottom: 1.2rem;
 }
 
-.navigation ul li b:nth-child(1)::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  background-color: #4d5bf9;
-  width: 100%;
-  height: 100%;
-  border-bottom-right-radius: 20px;
+.right .sales-analytics .item {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: 1rem var(--card-padding);
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  border-radius: var(--border-radius-3);
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+  cursor: pointer;
 }
-.navigation ul li b:nth-child(2) {
-  position: absolute;
-  background-color: #fff;
-  bottom: -20px;
-  height: 20px;
-  width: 100%;
-  transition: 0.25s;
-  display: none;
-}
-.navigation ul li b:nth-child(2)::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  background-color: #4d5bf9;
-  width: 100%;
-  height: 100%;
-  border-top-right-radius: 20px;
+.right .sales-analytics .item:hover {
+  box-shadow: none;
 }
 
-.navigation ul li.active b:nth-child(1),
-.navigation ul li.active b:nth-child(2)
-{
-  display: block;
+.right .sales-analytics .item .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  margin: 0;
+  white-space: nowrap;
 }
+
+.right .sales-analytics .item .icon {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.right .sales-analytics .item.offline .icon{
+  background-color: var(--color-danger);
+}
+.right .sales-analytics .item.customers .icon{
+  background-color: var(--color-success);
+}
+
+.right .sales-analytics .add-product {
+  background-color: transparent;
+  border: 1px dashed var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.right .sales-analytics .add-product:hover {
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+}
+
+.right .sales-analytics .add-product div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+}
+.right .sales-analytics .add-product div h3 {
+  font-weight: 600;
+}
+/* End of Right About */
+
+/* --------- MEDIA QUERS FOR 1200px --------- */
+@media only screen and (max-width:1200px) {
+  .container {
+    width: 94%;
+    grid-template-columns: 7.5rem auto 20rem;
+  }
+  aside .logo h2 {
+    display: none;
+  }
+  aside .sidebar h3 {
+    display: none;
+  }
+  aside .sidebar a{
+    width: 5.5rem;
+  }
+  aside .sidebar a:last-child {
+    position: relative;
+    margin-top: 1rem;
+  }
+
+  main .insights {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  main .insights .total {
+    width: 100%;
+  }
+  main .insights .total ion-icon {
+    font-size: 1.9rem;
+  }
+  main .recent-order  {
+    width: 94%;
+    position: absolute;
+  }
+  main .recent-order table {
+    width: 81vw;
+  }
+}
+
+/* --------- MEDIA QUERS FOR TABLETS AND MOBILE --------- */
+
+@media only screen and (max-width: 765px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  aside {
+    position: fixed;
+    left: 0; 
+    background-color: var(--color-white);
+    width: 18rem;
+    height: 100vh;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    padding: 0 1.5rem;
+    display: none;
+    z-index: 3;
+    animation: showName 300ms forwards;
+  }
+  @keyframes showName {
+    to {
+      left: 0;
+    }
+  }
+  aside .sidebar {
+    background-color: var(--color-white);
+  }
+  aside .logo h2 {
+    display: inline;
+  }
+
+  aside .sidebar h3 {
+    display: inline;
+  }
+  aside .sidebar a {
+    width: 100%;
+  }
+  aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+  }
+  aside .close {
+    display: inline-block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Main */
+  main {
+    margin-top: 5.5rem;
+    padding: 0 2rem;
+  }
+  main .recent-order {
+    position: relative;
+    width: 100%;
+    margin: 3rem 0 0 0;
+  }
+  main .recent-order table {
+    width: 100%;
+    margin: 0;
+  }
+  main .recent-order table tr {
+    font-size: 11px;
+  }
+  main .recent-order table tr td:first-child {
+    text-align: left;
+  }
+  main .recent-order table tr td:last-child {
+    padding: 0 8px;
+  }
+
+  .right {
+    width: 94%;
+    margin: 0 auto 4rem;
+  }
+  .right .top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4rem;
+    background-color: var(--color-white);
+    align-items: center;
+    padding: 0 1rem;
+    margin: 0;
+    z-index: 2;
+    box-shadow: 0 1rem 1rem var(--color-light);
+  }
+  .right .top .theme-toggle {
+    width: 5rem;
+    position: absolute;
+    left: 47%;
+    height: 2rem;
+  }
+
+  .right .top button {
+    display: inline-block;
+    font-size: 1.8rem;
+    background-color: transparent;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    padding: 0 0 0 0.8rem;
+    color: var(--color-dark);
+  }
+  .right .recent-updates .updates .update  {
+    justify-content: flex-start;
+  }
+}
+

@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  cursor: pointer;
+}
+
+.container {
+  background-color: #019ddb;
+  width: 100%;
+  min-height: 100vh;
+}
+
+ul {
+  width: 100%;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 50px;
+}
+
+ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.thumbnail  {
+  padding-top: 1%;
+}
+
+.thumbnail li {
+  list-style-type: none;
+  position: relative;
+  margin-top: 50px;
+}
+.thumbnail li img {
+  max-width: 120px;
+  display: block;
+  object-fit: cover;
+  transition: all 300ms ease-in-out;
+}
+.thumbnail li img:hover {
+  transform: translateX(30px);
+}
+
+.big-img {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+.big-img img {
+  max-width: 500px;
+  max-height: 300px;
+  transition: all 300ms ease-in-out;
+}
+.big-img img:hover {
+  transform: translateX(30px);
+}
+
+.content {
+  position: absolute;
+  top: 20%;
+  cursor: pointer;
+  right: 0%;
+  max-width: 45%;
+}
+.content p {
+  color: black;
+  font-size: 50px;
+  font-weight: 700;
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+  font-family: cursive;
+  margin-left: 16%;
+}
+.content h1 {
+  font-size: 80px;
+  font-weight: 600;
+  font-family: fantasy;
+  color: rgb(28, 211, 211);
+  text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.6);
+  margin-left: 5%;
+  margin-bottom: 40px;
+}
+.content h5 {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  font-family: sans-serif;
+  text-shadow: 1px 1px 1px black;
+  margin-left: 13%;
+  text-transform: uppercase;
+}
+
+.path {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  clip-path: circle(497px at left 300px);
+}

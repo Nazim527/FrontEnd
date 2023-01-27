@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../CSS/Lesson digital clock.css">
+  <title>Password Validation Check</title><link rel="stylesheet" href="../CSS/Lesson Password Validation Check.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <span>
+      
+      <input type="number" id="number" name="number"  max="7" min="4" required   style="caret-color: red; width: 300px;"> 
+      <button type="button" onclick="validateForm()">Click</button>
+      <br>
+      <p id="resultTrue" style="display: none;"></p>
+      <p id="resultFalse" style="display: none;"></p>
+    </span>
+    </div>
+  
+  <script>
+    function validateForm() {
+      var resultTrue, resultFalse, validateInput;
+      resultTrue = document.getElementById('resultTrue');
+      resultFalse = document.getElementById('resultFalse')
+      validateInput = document.getElementById('number');
+      if(validateInput.checkValidity()==false) {
+        resultTrue.style.display="none";
+        resultFalse.style.display="block";
+        resultFalse.style.backgroundColor="red";
+        resultFalse.style.padding = "10px"
+        resultFalse.innerHTML = validateInput.validationMessage;
+      } else {
+        resultFalse.style.display="none";
+        resultTrue.style.display="block";
+        resultTrue.style.backgroundColor="green";
+        resultTrue.style.padding = "10px"
+        resultTrue.innerHTML = "Hic bir sorun gozukmedi"
+      }
+    }
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

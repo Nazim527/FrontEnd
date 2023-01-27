@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/Lesson Animated Website Using.css">
+  <title>Animated Website Using</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="path"></div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+    <div class="thumbnail">
+      <li><img src="../ımage/bike1.png" onclick="big('../ımage/bike1.png'); path('#e5e5e5'); bg('purple')"></li>
+      <li><img src="../ımage/bike2.png" onclick="big('../ımage/bike2.png'); path('#fff'); bg('linear-gradient(70deg, yellow, green)')"></li>
+      <li><img src="../ımage/bike3.png" onclick="big('../ımage/bike3.png'); path('#e5e5e5'); bg('rgba(255,0,0,0.8)')"></li>
+    </div>
+    <div class="big-img">
+      <img src="../ımage/bike3.png" class="big">
+    </div>
+    <div class="content">
+      <p>&#x1F525; Let's Ride &#x1F525;</p><br>
+      <h1>Don't Fear Dying Fear Not Living</h1>
+      <h5>&#x1F60E; For Bike Lovers & bike riders</h5>
+    </div>
+  </div>
+
+  <script>
+    function big(img) {
+      document.querySelector('.big').src=img
+    }
+    function path(color) {
+      const path = document.querySelector('.path');
+      path.style.background = color
+    }
+    function bg(background) {
+      const bg = document.querySelector('.container');
+      bg.style.background = background;
+    }
+  </script>
+</body>
+</html>

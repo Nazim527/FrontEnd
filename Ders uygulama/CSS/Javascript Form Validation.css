@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3700b3;
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  width: 400px;
+}
+
+.container .header {
+  border-radius: 7px;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  padding: 20px 40px;
+}
+.header h2 {
+  text-align: center;
+}
+
+.container .form {
+  position: relative;
+  padding: 20px 40px;
+}
+
+.form .form-control {
+  position: relative;
+  padding-bottom: 15px;
+}
+.form .form-control.error {
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  transform: translateY(5px);
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: block;
+}
+
+.form-control input:focus {
+  border: 2px solid #777;
+}
+.form-control.success input {
+  border: 2px solid #2ecc71;
+}
+.form-control.error input {
+  border: 2px solid #c91c1c;
+}
+
+.container .form .form-control .icon{
+  visibility: hidden;
+  position: absolute;
+  font-size: 1.2rem;
+  top: 35px;
+  right: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .form .form-control .icon ion-icon:nth-child(1) {
+  position: absolute;
+  margin-left: 0;
+}
+
+.container .form .form-control.success .icon ion-icon:nth-child(1) {
+  color: #2ecc71;
+  visibility: visible;
+}
+.container .form .form-control.error .icon ion-icon:nth-child(2) {
+  color: #c91c1c;
+  visibility: visible;
+}
+
+.form-control small {
+  position: absolute;
+  color: red;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  background-color: #043fe2;
+  border: none;
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+}

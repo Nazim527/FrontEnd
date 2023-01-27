@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/Lesson Parallax Scrolling Website.css">
+  <title>Lesson Parallax Scrolling Website</title>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">LOGO</a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  <section>
+    <img src="../ımage/stars.png" id="stars">
+    <img src="../ımage/moon.png" id="moon">
+    <img src="../ımage/mountains_behind.png" id="mountains_behind">
+    <h2 id="text">Moon Light</h2>
+    <a href="#sec" id="btn">Explore</a>
+    <img src="../ımage/mountains_front.png" id="mountains_front">
+  </section>
+  <div class="sec" id="sec">
+    <h2>Parallax Scrolling Effects</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi a pariatur aliquid quisquam, quae voluptatum tempore quaerat perspiciatis et veritatis aut at, tempora culpa minus autem similique cum ea dolorum?
+    Commodi aperiam totam fuga expedita facilis alias esse numquam incidunt atque. Fugiat repellendus adipisci doloribus similique ea iste, totam mollitia at cum amet labore dolores repellat corporis. Nisi, necessitatibus dolorem.
+    Quae quibusdam excepturi, aspernatur rerum similique assumenda delectus nobis adipisci. Tempora est libero deserunt beatae commodi facere atque maxime, recusandae amet quisquam. Nobis, id blanditiis explicabo obcaecati accusamus maxime harum.
+    Quo, est veritatis placeat temporibus sunt sed sint esse ex? Esse quae voluptatibus cupiditate numquam id magni! Numquam, deleniti hic. A doloribus rem aliquid non accusantium tenetur quas repellendus quam!
+    Harum velit beatae praesentium. Eius cupiditate, nostrum corporis officia repellendus beatae nobis ad vitae excepturi quae totam itaque doloremque ipsam error laboriosam alias vero ducimus est nisi asperiores accusantium ratione.
+    Suscipit at illum ea nostrum sint rem quod dolores illo natus omnis. Minus assumenda culpa doloremque illo tenetur? Sequi deleniti obcaecati architecto ducimus veritatis nihil ratione accusantium enim unde porro!
+    Officiis, in neque! Neque laborum, voluptatibus vel id illo commodi perspiciatis atque doloremque accusamus aperiam ut excepturi earum eum placeat sed, explicabo doloribus quidem sint quas voluptas reprehenderit at eveniet.
+    Eius, in explicabo. Nulla error tenetur illum ad libero distinctio reprehenderit at sunt dolore vitae ducimus assumenda, accusantium, illo pariatur eligendi consequuntur placeat ab quidem. Saepe repudiandae minima quaerat voluptatibus.
+    Excepturi eveniet iure numquam doloremque ut dignissimos ratione distinctio quam nihil velit deserunt eius voluptatum, pariatur natus labore beatae repudiandae fugiat provident odio praesentium blanditiis quos illo! Rerum, incidunt amet.
+    Accusantium quae vel eos et aut molestiae, libero, placeat dignissimos eius repellat id nam quidem ab labore adipisci nemo tempora exercitationem nesciunt, totam eveniet deleniti nostrum. Sunt illum odio quia. <br><br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat deserunt exercitationem quod odit non reprehenderit, soluta nulla itaque ipsam enim magni accusantium explicabo suscipit quos! Illo cumque dicta molestias illum!
+    Delectus doloremque sequi illo modi labore et exercitationem consectetur, deleniti error corporis cumque reprehenderit. Architecto veniam dolore enim non tempora. Animi autem asperiores libero neque velit. Voluptatem culpa possimus omnis?
+    Temporibus corporis quibusdam sunt perspiciatis expedita enim totam tempore suscipit saepe amet? Dolor suscipit veritatis explicabo autem a. Ex unde fuga nihil dolores eum corporis enim harum doloribus blanditiis delectus.
+    Sapiente porro, reiciendis minus adipisci nemo placeat ex quo culpa corrupti iste magni reprehenderit. Saepe nostrum explicabo alias deleniti maxime, esse et corrupti quaerat minus nemo id quasi nesciunt eius.
+    Distinctio, consequuntur earum. Ipsa hic quis fuga, repellendus vitae adipisci voluptas harum quia ipsum qui nostrum possimus cupiditate! Placeat repellendus necessitatibus ex nulla quaerat eius exercitationem nihil doloribus iusto fuga.
+    Dolorum itaque ex provident recusandae similique quibusdam eligendi quae architecto, sequi quod voluptatibus commodi est dicta! Tenetur est voluptatem, aut porro temporibus eligendi similique quos iusto magnam non suscipit possimus.
+    Minus vel quia, maiores dolorum sunt et quis aliquid illum nihil at doloribus vero dolorem velit praesentium voluptas? Rerum unde, aperiam minima blanditiis officia fugit ipsa necessitatibus impedit consequatur quae.
+    Eius suscipit rerum iure deleniti dolore beatae perspiciatis quos illo, nisi nobis sunt, ut ullam minima. Magnam, cupiditate quaerat quae dolore officiis, eaque rem, eligendi magni est provident nesciunt facere!
+    Consequuntur odio ratione recusandae facere inventore quibusdam. Nisi architecto harum consequuntur atque? Eos, exercitationem porro, error doloribus, id nobis blanditiis vitae rem sequi facere ipsa quo dolores sint nulla pariatur.</p>
+  </div>
+
+
+  <script>
+    let stars = document.getElementById('stars')
+    let moon = document.getElementById('moon')
+    let mountains_behind = document.getElementById('mountains_behind')
+    let mountains_front = document.getElementById('mountains_front')
+    let text = document.getElementById('text')
+    let btn = document.getElementById('btn')
+    let header = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px'
+      moon.style.top = value * 1.05 + 'px'
+      mountains_behind.style.top = value * 0.5 + 'px'
+      text.style.marginRight = value * 4 + 'px'
+      text.style.marginTop = value * 1.5 + 'px'
+      btn.style.marginTop = value * 1.5 + 'px'
+      header.style.marginTop = value * 0.5 + 'px'
+    })
+  </script>
+</body>
+</html>

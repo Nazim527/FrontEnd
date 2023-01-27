@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+</head>
+<body>
+  <p id="result"></p>
+
+
+  <script>
+    var txt = '{'+
+    '"langs":['+
+    ' {"firstName":"Node","lastName":"JS"},'+
+    '{"firstName":"Angular","lastName":"JS"},'+
+    '{"firstName":"React","lastName":"JS"}'+
+    ']'+
+    '}';
+    var obj = JSON.parse(txt);
+    document.getElementById('result').innerHTML = obj.langs[0].firstName + " " + obj.langs[0].lastName; 
+  </script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ---------------- ROOT VARIABLES ---------------- */
+/* --------------- ROOT VARIABLES --------------- */
+
 :root {
   --color-primary: #7380ed;
   --color-danger: #ff7782;
@@ -27,6 +28,7 @@
 }
 
 /* ---------------- DARK THEME VARIABLES ---------------- */
+/* ---------------- EN SONDA ---------------- */
 .dark-theme-variables {
   --color-background: #181a1e; 
   --color-white: #202528; 
@@ -39,23 +41,22 @@
 * {
   margin: 0;
   padding: 0;
-  appearance: none;
-  border: 0;
-  outline: 0;
-  text-decoration: none;
-  list-style: none;
   box-sizing: border-box;
+  appearance: none;
+  outline: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
 }
 
 html {
-  font: 14px;
+  font-size: 14px;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  font-family: poppins, sans-serif;
-  font-size: 0.88em;
+  font-family: Poppins, sans-serif;
   background-color: var(--color-background);
   user-select: none;
   overflow-x: hidden;
@@ -64,9 +65,9 @@ body {
 .container {
   display: grid;
   width: 96%;
-  margin: 0 auto;
-  gap: 1.8rem;
   grid-template-columns: 14rem auto 23rem;
+  gap: 1.8rem;
+  margin: 0 auto;
 }
 
 a {
@@ -135,6 +136,7 @@ b {
   color: var(--color-warning);
 }
 
+/* Aside */
 aside {
   height: 100vh;
 }
@@ -160,12 +162,12 @@ aside .close {
   display: none;
 }
 
-/* Sidebar */
+/* Aside Sidebar */
 aside .sidebar {
   background-color: var(--color-white);
   display: flex;
   flex-direction: column;
-  height: 86vh;
+  height: 85vh;
   position: relative;
   top: 1.5rem;
 }
@@ -173,6 +175,12 @@ aside .sidebar {
 aside h3 {
   font-weight: 500;
   font-size: 13px;
+}
+
+aside .sidebar a ion-icon,
+aside .sidebar span {
+  font-size: 1.4rem;
+  transition: all 300ms ease;
 }
 
 aside .sidebar a {
@@ -183,12 +191,6 @@ aside .sidebar a {
   position: relative;
   height: 3rem;
   color: var(--color-info-dark);
-  transition: all 300ms ease;
-}
-
-aside .sidebar a ion-icon,
-aside .sidebar span {
-  font-size: 1.4rem;
   transition: all 300ms ease;
 }
 
@@ -212,11 +214,7 @@ aside .sidebar a.active::before {
 }
 
 aside .sidebar a.active ion-icon {
-  color: var(--color-primary);
   margin-left: calc(1rem - 2px);
-}
-
-aside .sidebar a:hover {
   color: var(--color-primary);
 }
 
@@ -226,45 +224,47 @@ aside .sidebar a:hover ion-icon {
 
 aside .sidebar a .message-count {
   background-color: var(--color-danger);
+  font-size: 12px;
   color: var(--color-white);
-  font-size: 11px;
   padding: 2px 10px;
   border-radius: var(--border-radius-1);
 }
-/* End Sidebar */
+/* End Side Bar */
 
 /* Main */
 main {
-  margin-top: 1.08rem;
+  margin-top: 1.35rem;
 }
 
 main .date {
   display: inline-block;
   background-color: var(--color-light);
   padding: 7px 20px;
-  margin-top: 1.1rem;
   border-radius: var(--border-radius-1);
+  margin-top: 1rem;
 }
 
 main .date input[type="date"] {
   background-color: transparent;
   color: var(--color-dark);
 }
+
 /* Insight */
 main .insights {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 1.1rem;
+  gap: 1.2rem;
 }
 
 main .insights > div {
   background-color: var(--color-white);
-  padding: var(--card-padding);
   border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  width: 17.5rem;
   margin-top: 1rem;
-  width: 17rem;
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
+  cursor: pointer;
 }
 
 main .insights > div:hover {
@@ -274,9 +274,9 @@ main .insights > div:hover {
 main .insights > div ion-icon {
   background-color: var(--color-primary);
   padding: 0.5rem;
+  border-radius: 50%;
   font-size: 1.6rem;
   color: var(--color-white);
-  border-radius: 50%
 }
 
 main .insights > div.expense ion-icon {
@@ -292,10 +292,10 @@ main .insights div .middle {
   justify-content: space-between;
 }
 
-main .insights h3 {
+main .insights  h3 {
   margin: 1rem 0 0.6rem;
-  font-size: 1rem;
   white-space: nowrap;
+  font-size: 1rem;
 }
 
 main .insights .progress {
@@ -307,8 +307,8 @@ main .insights .progress {
 }
 
 main .insights .progress svg {
-  width: 6rem;
-  height: 6rem;
+  width: 7rem;
+  height: 7rem;
 }
 
 main .insights .progress svg circle {
@@ -316,48 +316,49 @@ main .insights .progress svg circle {
   stroke: var(--color-primary);
   stroke-width: 12;
   stroke-linecap: round;
-  transform: translate(8px, 6px);
+  transform: translate(10px, 6px);
   stroke-dasharray: 110;
   stroke-dashoffset: 92;
 }
-
 main .insights .sales svg circle {
-  stroke-dashoffset: -40;
   stroke-dasharray: 200;
+  stroke-dashoffset: -50;
 }
 main .insights .expense svg circle {
   stroke-dashoffset: 0;
   stroke-dasharray: 100;
 }
 main .insights .income svg circle {
-  stroke-dashoffset: 35;
+  stroke-dashoffset: -35;
   stroke-dasharray: 110;
 }
 
 main .insights .progress .number {
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 main .insights span {
-  margin-top: 1.4rem;
+  margin-top: 1.1rem;
   display: inline-block;
+  font-size: 0.8rem;
 }
-/* End Insight */
+/* End of Insight */
 
 /* Recents Orders */
 main .recent-order {
-  margin-top: 2rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
 }
 
 main .recent-order h2 {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
 main .recent-order table {
@@ -366,14 +367,14 @@ main .recent-order table {
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
   text-align: center;
+  font-size: 13px  !important;
   box-shadow: var(--box-shadow);
 }
-
 main .recent-order table:hover {
   box-shadow: none;
 }
 
-main table tbody td {
+main table tbody td{
   height: 2.8rem;
   border-bottom: 1px solid var(--color-light);
   color: var(--color-dark-variant);
@@ -382,12 +383,11 @@ main table tbody td {
 main table tbody tr:last-child td {
   border-bottom: none;
 }
-
-/* End Main */
+/* End of Main */
 
 /* Right About */
 .right {
-  margin-top: 1.1rem;
+  margin-top: 1.2rem;
   width: 20rem;
 }
 
@@ -401,37 +401,43 @@ main table tbody tr:last-child td {
   display: none;
 }
 
-.right .theme-toggle {
+.right .top .theme-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-light);
   height: 1.6rem;
+  color: var(--color-white);
   width: 3.5rem;
   cursor: pointer;
-  background-color: var(--color-light);
   border-radius: var(--border-radius-1);
 }
 
-.right .theme-toggle ion-icon {
-  width: 50%;
+.right .top .theme-toggle ion-icon {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100%;
+  align-items: center;
+  width: 50%;
+  height: 80%;
 }
 
-.right .theme-toggle ion-icon.active {
+.right .top .theme-toggle ion-icon.active {
   background-color: var(--color-primary);
-  color: white;
   border-radius: var(--border-radius-1);
+  color: white;
 }
 
-.right .profile {
+.right .top .profile {
   display: flex;
-  text-align: right;
   gap: 1rem;
+  text-align: right;
 }
 
+.right .top .info {
+  font-size: 12px;
+}
+
+/* Recent Updates */
 .right .recent-updates {
   margin-top: 1rem;
 }
@@ -442,12 +448,10 @@ main table tbody tr:last-child td {
 
 .right .recent-updates .updates {
   background-color: var(--color-white);
-  padding: 25px 16px;
+  padding: 18px 16px;
   border-radius: var(--card-border-radius);
   box-shadow: var(--box-shadow);
-  transition: all 300ms ease;
 }
-
 .right .recent-updates .updates:hover {
   box-shadow: none;
 }
@@ -455,9 +459,8 @@ main table tbody tr:last-child td {
 .right .recent-updates .updates .update {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.1rem;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -467,15 +470,18 @@ main table tbody tr:last-child td {
   display: block;
 }
 
-.right .recent-updates .updates .update .message {
+.right .recent-updates .updates .update:nth-child(2) {
+  margin: 1rem 0 1rem 0;
+}
+.right .recent-updates .updates .update .messages {
   position: relative;
   top: 0.2rem;
+  font-size: 13px;
 }
-/* End Right About */
 
-/* Sales Analytics */
+/* Sales Analyitics */ 
 .right .sales-analytics {
-  margin-top: 1.2rem;
+  margin-top: 1.1rem;
 }
 
 .right .sales-analytics h2 {
@@ -486,14 +492,14 @@ main table tbody tr:last-child td {
   background-color: var(--color-white);
   display: flex;
   align-items: center;
-  padding: 1.1rem var(--card-padding);
+  padding: 1rem var(--card-padding);
   gap: 1rem;
   margin-bottom: 0.7rem;
   border-radius: var(--border-radius-3);
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
+  cursor: pointer;
 }
-
 .right .sales-analytics .item:hover {
   box-shadow: none;
 }
@@ -502,21 +508,21 @@ main table tbody tr:last-child td {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  margin: 0;
   width: 100%;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .right .sales-analytics .item .icon {
   font-size: 1.5rem;
   padding: 0.5rem;
   background-color: var(--color-primary);
-  color: var(--color-white);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
-
 .right .sales-analytics .item.offline .icon{
   background-color: var(--color-danger);
 }
@@ -530,10 +536,8 @@ main table tbody tr:last-child td {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-primary);
   cursor: pointer;
 }
-
 .right .sales-analytics .add-product:hover {
   background-color: var(--color-white);
   box-shadow: var(--box-shadow);
@@ -545,60 +549,47 @@ main table tbody tr:last-child td {
   gap: 0.6rem;
   font-size: 1.3rem;
 }
-
 .right .sales-analytics .add-product div h3 {
   font-weight: 600;
 }
-/* End Sales Analytics */
+/* End of Right About */
 
 /* --------- MEDIA QUERS FOR 1200px --------- */
-
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width:1200px) {
   .container {
     width: 94%;
-    grid-template-columns: 7rem auto 20rem;
+    grid-template-columns: 7.5rem auto 20rem;
   }
-
   aside .logo h2 {
     display: none;
   }
-
-  aside .sidebar h3{
+  aside .sidebar h3 {
     display: none;
   }
-
-  aside .sidebar a {
-    width: 5.6rem;
+  aside .sidebar a{
+    width: 5.5rem;
   }
-
   aside .sidebar a:last-child {
     position: relative;
     margin-top: 1rem;
   }
 
   main .insights {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: space-between;
   }
-
   main .insights .total {
     width: 100%;
   }
-
   main .insights .total ion-icon {
     font-size: 1.9rem;
   }
-
-  main .recent-order {
+  main .recent-order  {
     width: 94%;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 2rem 0 0 8.8rem;
   }
-
   main .recent-order table {
     width: 81vw;
   }
@@ -612,33 +603,26 @@ main table tbody tr:last-child td {
     display: flex;
     flex-direction: column;
   }
-
   aside {
     position: fixed;
-    left: -100%;
+    left: 0; 
     background-color: var(--color-white);
     width: 18rem;
-    z-index: 3;
-    box-shadow: 1rem 3rem 4rem var(--color-light);
     height: 100vh;
-    padding: var(--card-padding);
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    padding: 0 1.5rem;
     display: none;
+    z-index: 3;
     animation: showName 300ms forwards;
   }
-
   @keyframes showName {
     to {
       left: 0;
     }
   }
-
   aside .sidebar {
     background-color: var(--color-white);
   }
-  aside .top {
-    margin-top: 0.2rem;
-  }
-
   aside .logo h2 {
     display: inline;
   }
@@ -646,88 +630,79 @@ main table tbody tr:last-child td {
   aside .sidebar h3 {
     display: inline;
   }
-
   aside .sidebar a {
     width: 100%;
-    height: 3.1rem;
   }
-
   aside .sidebar a:last-child {
     position: absolute;
     bottom: 2rem;
   }
-
   aside .close {
     display: inline-block;
     font-size: 1.5rem;
-    display: flex;
-    align-items: center;
     cursor: pointer;
   }
 
   /* Main */
   main {
-    margin-top: 6rem;
-    padding: 0 1rem;
+    margin-top: 5.5rem;
+    padding: 0 2rem;
   }
-
   main .recent-order {
     position: relative;
-    margin: 3rem 0 0 0;
     width: 100%;
+    margin: 3rem 0 0 0;
   }
-
   main .recent-order table {
     width: 100%;
     margin: 0;
+  }
+  main .recent-order table tr {
+    font-size: 11px;
+  }
+  main .recent-order table tr td:first-child {
+    text-align: left;
+  }
+  main .recent-order table tr td:last-child {
+    padding: 0 8px;
   }
 
   .right {
     width: 94%;
     margin: 0 auto 4rem;
   }
-
   .right .top {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     height: 4rem;
-    align-items: center;
-    padding: 0 0.8rem;
     background-color: var(--color-white);
+    align-items: center;
+    padding: 0 1rem;
     margin: 0;
     z-index: 2;
     box-shadow: 0 1rem 1rem var(--color-light);
   }
-
   .right .top .theme-toggle {
-    width: 4.4rem;
+    width: 5rem;
     position: absolute;
-    left: 74%;
-  }
-
-  .right .top .info {
-    display: none;
+    left: 47%;
+    height: 2rem;
   }
 
   .right .top button {
     display: inline-block;
+    font-size: 1.8rem;
     background-color: transparent;
     cursor: pointer;
-    font-size: 1.8rem;
-    color: var(--color-dark);
-    position: absolute;
     left: 0;
+    position: absolute;
     padding: 0 0 0 0.8rem;
+    color: var(--color-dark);
   }
-
   .right .recent-updates .updates .update  {
     justify-content: flex-start;
   }
-
-  .right .sales-analytics .add-product {
-    position: relative;
-    top: 2rem;
-  }
 }
+

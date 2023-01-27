@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: consolas;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #edf1f4;
+}
+
+.calculator {
+  position: relative;
+  width: 340px;
+  padding: 20px;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1),
+  -15px -15px 20px #fffb;
+  border-radius: 20px;
+}
+
+.calculator .buttons {
+  position: relative;
+  display: grid;
+}
+
+.calculator .buttons #value {
+  position: relative;
+  grid-column: span 4;
+  height: 100px;
+  width: 100%;
+  line-height: 100px;
+  text-align: end;
+  user-select: none;
+  overflow: hidden;
+  box-shadow:  inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+    inset  -5px -5px 10px #fff;
+  border-radius: 10px;
+  padding-right: 20px;
+  margin-bottom: 12px;
+  color: #5166d6;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.calculator .buttons span {
+  position: relative;
+  padding: 10px;
+  box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px #fff0;
+  min-width: 40px;
+  margin: 9px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 1.4em;
+  border: 2px solid #edf1f4;
+  cursor: pointer;
+  box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.1),
+  -5px -5px 10px #fff;
+}
+
+.calculator .buttons span:active:not(#clear,#plus,#equal ) {
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+  inset -5px -5px 10px #fff;
+  color: #f44336;
+}
+
+.calculator span#clear {
+  grid-column: span 2;
+  background-color: #f44336;
+  color: #fff;
+  border: 2px solid #edf1f4;
+}
+.calculator span#plus {
+  grid-row: span 2;
+  background-color: #31a935;
+  color: #fff;
+  border: 2px solid #edf1f4;
+}
+.calculator span#equal {
+  background-color: #2196f4;
+  color: #fff;
+  border: 2px solid #edf1f4;
+}
+
+.toggleBtn {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+  -5px -5px 10px #fffb;
+  border-radius: 2px solid #edf1f4;
+}
