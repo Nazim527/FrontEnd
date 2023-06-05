@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; list-style: none;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+}
+
+:root {
+    --fs-lg: 3rem;
+    --fs-md: 2.2rem;
+    --fs-sm: 1.6rem;
+
+    --fs-btn: 2rem;
+
+    --color-dark:#21243D;
+    --color-primary: #FF6464;;
+    --color-white: #fff;
+    --color-light: #8695A4;
+    --color--secondry: #00A8CC;
+}
+
+html {
+    font-size: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+/*! Header */
+
+.header {
+    height: 50px;
+    position: relative;
+    
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.header .toggle {
+    padding-right: 18px;
+}
+
+.header .nav_bar {
+    display: none;
+}
+
+.toggle.active .nav_bar {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    font-size: var(--fs-sm);
+    
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.header .nav_bar a{
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+
+/*! Media for Desktop */ 
+@media screen and (min-width: 1150px) {
+    :root {
+        --fs-Xlg: 4.4rem;
+        --fs-lg:3rem;
+        --fs-md: 2.6rem;
+        --fs-sm: 1.6rem;
+    
+        --fs-btn: 2rem;
+    
+        --color-dark:#21243D;
+        --color-primary: #FF6464;;
+        --color-white: #fff;
+        --color-light: #8695A4;
+        --color--secondry: #00A8CC;
+    }
+
+    .header {
+        height: 65px;
+    }
+
+    .header .toggle {
+        display: none;
+    }
+
+    .header .nav_bar {
+        padding-right: 6rem;
+        
+        display: flex;
+        align-items: center;
+        gap: 3.4rem;
+    }
+
+    .header .nav_bar a {
+        font-weight: 500;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,12 @@
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E9ECEF;
+}
+.container-fluid ul li a {
+    text-decoration: none;
+    color: white;
+}
