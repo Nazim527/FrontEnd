@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="data">
+    <button type="button" onclick="error()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function error() {
+            let message, inputValue;
+            inputValue = document.querySelector("#data").value;
+            message = document.querySelector("#result");
+            message.innerHTML = "";
+
+            try {
+                if(inputValue == "") throw "Bu alani bos qoymaq olmaz";
+                if(isNaN(inputValue)) throw "Xahis olunur sadece reqem daxil edin";
+                inputValue = Number(inputValue);
+                if(inputValue<5) throw 'Xahis olunur 5`den yuxari bir reqem daxil edin'
+            } catch (e) {
+                message.innerHTML = e
+            }
+        }
+    </script>
+</body>
+</html>
