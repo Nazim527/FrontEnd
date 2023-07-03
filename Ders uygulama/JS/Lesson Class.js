@@ -32,7 +32,7 @@ class Person {
         return this.skills
     }
     
-    //! Set istifade ederek
+    //! Set istifade ederekx
     set setSkills(skill) {
         this.skills.push(skill);
     }
