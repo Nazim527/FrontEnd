@@ -65,7 +65,7 @@ const person2 = new Person('Betul', "Yildirim", 21)
 //? ---------------------------------------------------------------------------------------------------------------
 
 //! Inheritance - miras almaq; bu o demekdi men bir "Class" olusdururam ama ki "ozellik" ve "metodlarin" basqa bir classdan miras aliram
-//! ornek asagida kimi verilmisdir. BU usulun bir iside yaxsidi ki kod setir sayin azaldir eyni seyin tekrarlanmasin onleyir
+//! ornek asagida kimi verilmisdir.BU usulun bir iside yaxsidi ki kod setir sayin azaldir eyni seyin tekrarlanmasin onleyir
 
 class Teacher extends Person {
     constructor(firstName, lastName,age, gender) {
