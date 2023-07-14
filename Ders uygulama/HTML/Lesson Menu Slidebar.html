@@ -77,25 +77,6 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <script>
-    let Menutoggle = document.querySelector('.toggle');
-    let navigation = document.querySelector('.navigation');
-    Menutoggle.onclick = function() {
-      Menutoggle.classList.toggle('active');
-      navigation.classList.toggle('active');
-    }
-
-    let list = document.querySelectorAll('.list');
-    for(let i=0; i<list.length; i++) {
-      list[i].onclick = function() {
-        let j = 0;
-        while (j<list.length) {
-          list[j++].className = 'list';
-        }
-        list[i].className = 'list active';
-      }
-    }
-
-  </script>
+  <script src="../JS/JS menu slideBar.js"></script>
 </body>
 </html>

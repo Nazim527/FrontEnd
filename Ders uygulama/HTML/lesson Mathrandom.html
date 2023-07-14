@@ -19,29 +19,7 @@
   <button type="button" onclick="createrandom()">Rastgele sayi olusdur</button>
 
 
-  <script>
-    function createrandom() {
-      var kdal = document.getElementById('kdal').value;
-      var bdal = document.getElementById('bdal').value;
-      var x = Math.round(Math.random() * (bdal - kdal)) + Number(kdal)
-
-      document.getElementById('randomnumber').innerHTML = x;
-    }
-  </script>
-
-  <p id="randomnumber1" style="border: 3px solid red; width: 200px; height: 40px;"></p>
-  <input type="text" placeholder="Kucuk sayi" id="kdal1" style="width: 75px;">ile
-  <input type="text" placeholder="buyuk sayi" id="bdal1" style="width: 75px;">arasında
-  <button type="button" onclick="createRandom()">Rastgele sayi olusdur</button>
-
-  <script>
-    function createRandom() {
-      var kdal1 = document.getElementById('kdal1').value;
-      var bdal1 = document.getElementById('bdal1').value;
-      var x = Math.round(Math.random() * (bdal1 - kdal1)) + parseInt(kdal1);
-      document.getElementById('randomnumber1').innerHTML = x;
-    }
-  </script>
+  <script src="../JS/JS mathrandom.js"> </script>
 </body>
 
 </html>
