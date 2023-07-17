@@ -1,0 +1,62 @@
+html {
+  background-color: #5474f6;
+  background-size: 3px;
+  font-family: Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 50px auto 0 10px;
+}
+
+.autos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+  align-self: center;
+  justify-self: center;
+}
+
+.autoCard {
+  text-align: center;
+  background: #fff;
+  padding: 30px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.description {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+button {
+  background: #1b1b1b;
+  color: #fff;
+  padding: 10px 30px;
+  border: 0;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: left;
+  color: #fff;
+  margin: 20px 10px 10px;
+  font-weight: bold;
+}
+
+.detailText {
+  display: flex;
+  flex-direction: column;
+}
