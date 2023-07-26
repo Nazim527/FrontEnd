@@ -14,32 +14,16 @@ let carsList = [
   { id: 12, brand: "Nissan", year: 2012, color: "Blue", rating: 1 },
 ];
 
-window.addEventListener("load", function() {
-  const localCars = JSON.parse(localStorage.getItem("cars")) || []
-  if(localCars.length>0) {
-    localStorage.setItem("cars", JSON.stringify(localCars))
-  } else {
-    localStorage.setItem("cars", JSON.stringify(carsList))
-  }
+const carWrapper = document.querySelector(".autos")
+carsList.forEach(element => {
+  genderCart(carWrapper, element)
+});
 
-  renderCart()
-})
+function genderCart(parent, obj) {
+  const {id,brand,year,color,rating} = obj
 
-function renderCart () {
-  const carsWrapper = document.querySelector(".autos");
-  const localStroge = JSON.parse(localStorage.getItem("cars")) || []
-
-  carsWrapper.innerHTML = ""
-  localStroge.forEach((car) => {
-    genereteCars(carsWrapper, car)
-  })
-}
-
-function genereteCars(parent, obj) {
-  const {id,brand, year, color, rating} = obj
-
-  const carCart = document.createElement("div");
-  carCart.setAttribute("data-id", id);
+  const carCart = document.createElement("div")
+  carCart.setAttribute("data-id", id)
   carCart.classList.add("autoCard")
   carCart.innerHTML = `
   <h2>${brand} ${year}</h2>
@@ -50,31 +34,8 @@ function genereteCars(parent, obj) {
     <p class="detailText"><strong>Rating</strong>${rating}</p>
   </div>
   <button type="button" class="btn">Delete</button>
-  </div>`;
+  </div>`
 
   parent.appendChild(carCart)
-}
-
-const carsWrapper = document.querySelector(".autos");
-carsWrapper.addEventListener('click', deleteCart)
-
-function deleteCart(e) {
-  const target = e.target;
-  if(target.classList.contains("btn")) {
-    const confirmDelete = confirm("Silmek isdediyinize eminsinizmi")
-
-    if(confirmDelete) {
-      const carCat = target.closest(".autoCard")
-      const carId = carCat.getAttribute("data-id")
-      carCat.remove()
-
-      const localCars = JSON.parse(localStorage.getItem("cars")) || []
-      const newItems = localCars.filter((car) => {
-        return car.id !== Number(carId)
-      })
-
-      localStorage.setItem("cars", JSON.stringify(newItems))
-    }
-  }
 }
 
