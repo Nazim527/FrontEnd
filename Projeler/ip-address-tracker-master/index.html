@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>IP adress location</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+   crossorigin=""></script>
+</head>
+<body>
+  <div class="ip_tracker">
+    <div class="ip_head">
+      <h3>IP Address Tracker</h3>
+      <form>
+        <input type="text" id="ip_input" placeholder="Search  for any IP address or domain">
+        <button id="ip_btn"><img src="../ip-address-tracker-master/images/icon-arrow.svg"></button>
+      </form>
+      <div class="ip_info">
+        <table>
+
+          <thead>
+            <tr>
+              <th>IP ADDRESS</th>
+              <th>LOCATION</th>
+              <th>TIME ZONE</th>
+              <th>ISP</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td id="ip_address_text">--</td>
+              <td id="location_text">--</td>
+              <td id="time_text">--</td>
+              <td id="isp_text">--</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+
+    <div class="footer" id="map"></div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
