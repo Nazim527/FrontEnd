@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Today’s Weather",
+      "message": "Hello, I am looking for a new career opportunity and would appreciate your support.",
+      "isLiked": true,
+      "date": "4/8/2023"
+    },
+    {
+      "id": 88,
+      "title": "My Health Condition",
+      "message": "Hello, I am looking for a new career opportunity and would appreciate your support.",
+      "isLiked": true,
+      "date": "4/8/2023"
+    }
+  ]
+}
