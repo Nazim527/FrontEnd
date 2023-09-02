@@ -4,7 +4,7 @@ import { getMuscle } from "./muscle";
 const RestApi = () => {
   const [muscles, setMuscle] = useState([]);
   const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); //! Loading yuklenmesi yerine yetirmek ucun
 
   const handleSubmit = async (e) => {
     e.preventDefault();

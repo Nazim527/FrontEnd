@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    margin: 0 auto  ;
+    background-color: aliceblue;
+    padding: 40px 0;
+    width: 100%;
+    font-size:22px;
+    font-weight: 700;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navElems {
+    list-style: none;
+    font-size: 20px;
+
+    display: flex;
+    gap: 20px; 
+    align-items: center;
+}
