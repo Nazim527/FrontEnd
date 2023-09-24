@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../store/authContent";
 
-const Login = ({auth, setAuth}) => {
+const Login = () => {
   const navigation = useNavigate();
   const [value, setValue] = React.useState("");
+  const {auth, setAuth} = useAuthContext()
 
   const handleSubmit = () => {
 

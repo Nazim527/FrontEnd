@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../store/authContent";
 
 
 const HeaderContext = ({ auth, setAuth }) => {
     const navigation = useNavigate();
+    const AuthContext = useAuthContext()
+    console.log(AuthContext);
 
     const handleLogout = () => {
         localStorage.clear()
