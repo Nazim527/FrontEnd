@@ -7,14 +7,18 @@ import RouterClone from "./lesson react/RouterDomClone/routerClone";
 import ReactContext from "./lesson react/React Context/React.Context";
 import AuthProvider from "./lesson react/React Context/store/authContent";
 
+import ReduxTool from "./lesson react/Redux/redux";
+
+
 function App() {
   return (
     // <RestApi/>
     // <Rooter/>
     // <RouterClone/> //! Yarimciqdi tamamlamaq lazimdir
-    <AuthProvider> {/*//! Bunu ona gore yaziriq ki ReactContetximizi bunun icinde daxil olan isdenilen componentin icine dasimaq ucun*/}
-      <ReactContext/>
-    </AuthProvider>
+    // <AuthProvider> {/*//! Bunu ona gore yaziriq ki ReactContetximizi bunun icinde daxil olan isdenilen componentin icine dasimaq ucun*/}
+    //   <ReactContext/>
+    // </AuthProvider>
+      <ReduxTool/>
   )
 }
 

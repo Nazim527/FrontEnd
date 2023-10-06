@@ -15,3 +15,5 @@ komutlar.txt
 
 # log
 *.log
+
+node_modules
