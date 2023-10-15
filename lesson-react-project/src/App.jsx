@@ -12,6 +12,7 @@ import ReduxCrud from "./lesson react/Redux Crud/Redux Crud";
 
 import { persistor } from "./lesson react/Redux Crud/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Reduxthunk from "./lesson react/Redux Thunk/Reduxthunk";
   
 function App() {
   return (
@@ -22,9 +23,10 @@ function App() {
     //   <ReactContext/>
     // </AuthProvider>
     // <ReduxTool/>
-      <PersistGate persistor={persistor}> //!Persistor bize localstorge vezifesini gorur ve isimizi cox rahatlasdiri 
-        <ReduxCrud/>
-      </PersistGate>
+    // <PersistGate persistor={persistor}> //!Persistor bize localstorge vezifesini gorur ve isimizi cox rahatlasdiri 
+    //   <ReduxCrud/>
+    // </PersistGate>
+    <Reduxthunk/>
   )
 }
 
