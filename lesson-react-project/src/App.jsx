@@ -8,8 +8,11 @@ import ReactContext from "./lesson react/React Context/React.Context";
 import AuthProvider from "./lesson react/React Context/store/authContent";
 
 import ReduxTool from "./lesson react/Redux/redux";
+import ReduxCrud from "./lesson react/Redux Crud/Redux Crud";
 
-
+import { persistor } from "./lesson react/Redux Crud/store";
+import { PersistGate } from "redux-persist/integration/react";
+  
 function App() {
   return (
     // <RestApi/>
@@ -18,7 +21,10 @@ function App() {
     // <AuthProvider> {/*//! Bunu ona gore yaziriq ki ReactContetximizi bunun icinde daxil olan isdenilen componentin icine dasimaq ucun*/}
     //   <ReactContext/>
     // </AuthProvider>
-      <ReduxTool/>
+    // <ReduxTool/>
+      <PersistGate persistor={persistor}> //!Persistor bize localstorge vezifesini gorur ve isimizi cox rahatlasdiri 
+        <ReduxCrud/>
+      </PersistGate>
   )
 }
 
