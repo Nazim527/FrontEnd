@@ -1,8 +1,0 @@
-.character_list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-
-    padding: 20px 40px;
-}
